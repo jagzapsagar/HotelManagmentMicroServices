@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.User;
+import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.repo.UserRepo;
 import com.example.demo.service.UserService;
 
@@ -25,7 +26,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User getById(Integer id) {
 		// TODO Auto-generated method stub
-		return userRepo.findById(id).orElseThrow(() -> new NoSuchElementException("Not Found"));
+		return userRepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("User with given id is not found on server !! : " + id));
 	}
 
 	@Override
