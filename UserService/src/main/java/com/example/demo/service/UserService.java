@@ -6,6 +6,6 @@ import com.example.demo.entity.User;
 
 public interface UserService {
 	List<User> getall();
-	User getById(Integer id);
+	User getById(String id);
 	User save(User user);
 }

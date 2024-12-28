@@ -2,6 +2,7 @@ package com.example.demo.service.impl;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,7 +25,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User getById(Integer id) {
+	public User getById(String id) {
 		// TODO Auto-generated method stub
 		return userRepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("User with given id is not found on server !! : " + id));
 	}
@@ -32,6 +33,8 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User save(User user) {
 		// TODO Auto-generated method stub
+		String udd = UUID.randomUUID().toString();
+		user.setId(udd);
 		return userRepo.save(user);
 	}
 

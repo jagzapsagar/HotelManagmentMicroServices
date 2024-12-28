@@ -10,8 +10,8 @@ import jakarta.persistence.Table;
 @Table(name= "UserMicro")
 public class User {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private String id;
 	private String name;
 	private String email;
 	private String about;
@@ -23,7 +23,7 @@ public class User {
 	}
 
 
-	public User(int id, String name, String email, String about) {
+	public User(String id, String name, String email, String about) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -32,12 +32,12 @@ public class User {
 	}
 
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
