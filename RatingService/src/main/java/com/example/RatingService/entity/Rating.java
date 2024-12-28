@@ -1,12 +1,14 @@
 package com.example.RatingService.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "ratingMicro")
 public class Rating {
 	
+	@Id
 	private String ratingId;
 	private String userId;
 	private String hotelId;
