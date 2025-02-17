@@ -16,7 +16,7 @@ import com.example.RatingService.entity.Rating;
 import com.example.RatingService.service.RatingService;
 
 @RestController
-@RequestMapping("/home")
+@RequestMapping("/rating")
 public class RatingController {
 
 	@Autowired

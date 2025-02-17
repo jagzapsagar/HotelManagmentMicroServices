@@ -17,13 +17,13 @@ import com.example.demo.service.HotelService;
 
 
 @RestController
-@RequestMapping("/home")
+@RequestMapping("/hotel")
 public class HotelController {
 	
 	@Autowired
 	private HotelService hotelService;
 	
-	@GetMapping("/getall")
+	@GetMapping("/get")
 	public List<Hotel> getall(){
 		return hotelService.getAll();
 		
@@ -31,7 +31,7 @@ public class HotelController {
 	
 	@GetMapping("/get/{id}")
 	public Hotel getById(@PathVariable String id) {
-		System.out.println(id);
+		
 		return hotelService.get(id);
 	}
 	
